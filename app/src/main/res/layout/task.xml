@@ -2,57 +2,82 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TaskContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/TaskContainer"
-    android:padding="10dp"
     android:background="@color/Blue_navi"
-    >
+    android:padding="5dp">
 
 
     <TextView
         android:id="@+id/Heading"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/Blue_light"
         android:ellipsize="end"
         android:fontFamily="sans-serif-black"
-        android:includeFontPadding="false"
         android:maxLines="1"
-        android:padding="10dp"
-        android:text="Task 1"
-        android:textAllCaps="true"
+        android:padding="5dp"
+
+        android:text="Task 1 1111111111111111111111111111111111111111111111111111111111111111111111111"
+
+        android:textAlignment="gravity"
         android:gravity="left|bottom"
+        android:textAllCaps="true"
         android:textColor="@color/black"
         android:textColorHighlight="@color/black"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:typeface="monospace"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="InvalidId" />
+
+
+        app:layout_constraintBottom_toTopOf="@id/Description"
+        app:layout_constraintRight_toLeftOf="@id/v1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Description"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/Blue_light"
         android:ellipsize="end"
         android:fontFamily="sans-serif-black"
-        android:gravity="left|bottom"
-        android:includeFontPadding="false"
+        android:gravity="left|top"
         android:maxLines="1"
-        android:text="description"
-
-
+        android:padding="5dp"
+        android:text="description shshshshshshshshshshshshshshshshshshshshhshshshshshshs"
         android:textColor="#37474F"
+
         android:textColorHighlight="@color/black"
         android:textSize="20sp"
-        android:typeface="monospace"
+
+
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/v1"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/Heading" />
+
+    <TextView
+        android:id="@+id/starttime"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="5dp"
+        android:background="@color/purple_500"
+        android:padding="5dp"
+        android:text="5:30AM"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="@id/Description"
+        app:layout_constraintLeft_toRightOf="@id/v1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/Heading" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="100dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
