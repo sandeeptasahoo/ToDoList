@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200">
+
+    <TextView
+        android:id="@+id/TaskHead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_700"
+        android:padding="10dp"
+        android:text="TASK"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/TaskSubject"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/TaskSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:textSize="25sp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0"
+        android:inputType="text"
+        android:hint="Subject"
+        android:maxLength="40"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/TaskDescription"
+        app:layout_constraintTop_toBottomOf="@+id/TaskType" />
+
+    <EditText
+        android:id="@+id/TaskDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:lines="10"
+        android:maxLines="10"
+        app:layout_constraintHorizontal_bias="0"
+        android:inputType="textMultiLine"
+        android:hint="Descrption"
+        android:text=""
+        android:textAlignment="gravity"
+        android:gravity="top|left"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TaskSubject" />
+
+    <Spinner
+        android:id="@+id/TaskType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="Task Type"
+        app:layout_constraintTop_toBottomOf="@id/TaskDescription"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+
+        />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/TaskStartTime"
+        android:hint="Start Time"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/TaskType"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/TaskStartButton"
+        />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/TaskStartButton"
+        android:text="Select time"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/TaskStartTime"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TaskType"
+        android:onClick="StartTimeSelecter"
+        />
+
+
+    <TimePicker
+        android:id="@+id/TaskStartTimePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:timePickerMode="spinner"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TaskStartTime"
+        />
+
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/TaskEndTime"
+        android:hint="End Time"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/TaskStartTimePicker"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/TaskEndButton"
+        />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/TaskEndButton"
+        android:text="Select time"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/TaskEndTime"
+        app:layout_constraintTop_toBottomOf="@id/TaskStartTimePicker"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="EndTimeSelecter"
+        />
+
+    <TimePicker
+        android:id="@+id/TaskEndTimePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:timePickerMode="spinner"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TaskEndTime"
+        />
+
+
+
+
+
+    <DatePicker
+        android:id="@+id/DateSelector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/DateDisplay" />
+    <TextView
+        android:id="@+id/DateDisplay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Select Date"
+        android:visibility="gone"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/SelectDateButton"
+        app:layout_constraintTop_toBottomOf="@id/TaskEndTimePicker"
+        />
+    <Button
+        android:id="@+id/SelectDateButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Select Date"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/TaskEndTimePicker"
+        app:layout_constraintLeft_toRightOf="@id/DateDisplay"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="selectDate"
+
+        />
+
+
+    <Button
+        android:id="@+id/SubmitTaskButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/teal_700"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Submit task"
+        app:layout_constraintTop_toBottomOf="@id/DateSelector"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="SubmitTask"
+
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DaySelector"
+        app:layout_constraintTop_toBottomOf="@id/TaskEndTimePicker"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:onClick="MultipleSelectorForWeek"
+        android:text=""
+        android:hint="Select Reminder Days"
+        android:padding="5dp"
+        android:drawableEnd="@android:drawable/arrow_down_float"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="@color/teal_200"
+
+        />
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
